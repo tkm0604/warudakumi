@@ -1,20 +1,20 @@
-# WordPressコアを除外(ルートファイルはルート相対で指定)
-#/ を付けることで、除外対象をサイトルート直下のファイルに限定
-/wp-admin/
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/xmlrpc.php
+# wp-content/uploadsなどのユーザーアップロードは除外
+wp-content/uploads/
+wp-content/cache/
 
-# アップロードを除外
-/wp-content/uploads/
-/wp-content/cache/
+# wp-config.php は環境固有なのでバージョン管理しない例
+wp-config.php
 
-# wp-config.phpを除外
-/wp-config.php
+# プラグインやテーマ固有のバックアップは除外
+wordpress/wp-content/wpvividbackups/
+wordpress/wp-content/wpvivid_uploads/
+wordpress/wp-content/wpvivid_staging/
 
-# バックアップファイルを無視
-/wordpress/wp-content/wpvividbackups/
-/wordpress/wp-content/wpvivid_uploads/
-/wordpress/wp-content/wpvivid_staging/
+# コアファイルは除外しない
+# 以前はここで /wp-admin/ や /wp-includes/ /index.php と書いていたが削除
+
+# その他、OSやエディタ関連の不要ファイル
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
