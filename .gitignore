@@ -1,20 +1,20 @@
-# WordPressコアを除外
-wp-admin/
-wp-includes/
-index.php
-license.txt
-readme.html
-xmlrpc.php
+# WordPressコアを除外(ルートファイルはルート相対で指定)
+#/ を付けることで、除外対象をサイトルート直下のファイルに限定
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
 
 # アップロードを除外
-wp-content/uploads/
-wp-content/cache/
+/wp-content/uploads/
+/wp-content/cache/
 
 # wp-config.phpを除外
-wp-config.php
+/wp-config.php
 
 # バックアップファイルを無視
-wordpress/wp-content/wpvividbackups/
-wordpress/wp-content/wpvivid_uploads/
-wordpress/wp-content/wpvivid_staging/
-
+/wordpress/wp-content/wpvividbackups/
+/wordpress/wp-content/wpvivid_uploads/
+/wordpress/wp-content/wpvivid_staging/
