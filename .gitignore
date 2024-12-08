@@ -5,15 +5,15 @@ wp-content/cache/
 # wp-config.php は環境固有なのでバージョン管理しない例
 wp-config.php
 
-# プラグインやテーマ固有のバックアップは除外
+# バックアップ関連除外
 wordpress/wp-content/wpvividbackups/
 wordpress/wp-content/wpvivid_uploads/
 wordpress/wp-content/wpvivid_staging/
 
-# コアファイルは除外しない
-# 以前はここで /wp-admin/ や /wp-includes/ /index.php と書いていたが削除
+# コアファイルを除外する記述は削除済み
+# つまり /wp-admin/, /wp-includes/, /index.php は除外されない
 
-# その他、OSやエディタ関連の不要ファイル
+# OS・エディタ関連ファイル除外
 .DS_Store
 Thumbs.db
 .idea/
