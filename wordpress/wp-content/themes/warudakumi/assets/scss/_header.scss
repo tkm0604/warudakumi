@@ -1,0 +1,265 @@
+/* header.scss */
+
+/* --------------------------------------------------
+    SP用 | z-index: 9998;
+-------------------------------------------------- */
+#top-head.fixed {
+	@include fixed($top:0);
+	@include color-blk;
+	background: transparent; 
+    text-decoration: none;
+    width: 100%;
+	height: 62px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1;
+    z-index: 9998;
+	transition: top 0.65s ease-in;
+    -webkit-transition: top 0.65s ease-in;
+    -moz-transition: top 0.65s ease-in;
+	#mobile-head {
+		@include relative();
+		.sp-nav {
+			@include absolute($top:-620px); // 開いてないときは画面外に配置
+			@include bg-wht;
+			display: block;
+			padding-top: 100px;
+			width: 100%;
+			-webkit-transition: .5s ease-in-out;
+			-moz-transition: .5s ease-in-out;
+			transition: .5s ease-in-out;
+			// PC
+			/*@include mq(tb) {
+				display: none;
+			}*/
+			.sp-nav-box {
+				a {
+					@include color-blk;
+					font-size: 1.7rem;
+					font-weight: 300;
+					text-align: center;
+					display: block;
+					padding: 27px 0;
+					border-bottom: dotted 1px #4f4f4f;
+					i.icon-insta-sp {
+						font-size: 2.8rem;
+						vertical-align: bottom;
+					}
+					i.icon-shop-sp {
+						font-size: 2.2rem;
+					}
+					&:hover {
+							@include color-red;
+							font-weight: bold;
+						i {
+							@include color-red;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// toggleアニメーション
+#top-head.open {
+	.sp-nav {
+		-moz-transform: translateY(556px);
+		-webkit-transform: translateY(556px);
+		transform: translateY(556px);
+	}
+	#nav-toggle {
+		span {
+			-webkit-transition: .5s ease-in-out;
+			-moz-transition: .5s ease-in-out;
+			transition: .5s ease-in-out;
+			&:nth-child(1) {
+				width: 0;
+				-webkit-transform: rotate(315deg);
+				-moz-transform: rotate(315deg);
+				transform: rotate(315deg);
+			}
+			&:nth-child(2) {
+				width: 0;
+			}
+			&:nth-child(3) {
+				width: 0;
+				-webkit-transform: rotate(-315deg);
+				-moz-transform: rotate(-315deg);
+				transform: rotate(-315deg);
+			}
+		}
+		p {
+			@include absolute($top:0);
+			@include color-blk;
+			font-weight: 300;
+			-webkit-transition: .5s ease-in-out;
+			-moz-transition: .5s ease-in-out;
+			transition: .5s ease-in-out;
+			opacity: 1 !important;
+			&:hover {
+				@include color-red;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/* --------------------------------------------------
+    midnight | z-index: 9999;
+-------------------------------------------------- */
+
+// logo
+// global-nav 
+
+#global-nav {
+	@include relative();
+	//overflow: hidden;
+	.midnight {
+		// position: fixed;
+		position: relative;
+		top: 15px !important;
+		height: 32px !important;
+		z-index:10;
+		a.logo-a {
+			display: inline-block;
+			font-weight: bold;
+			text-align: left;
+			font-size: 1.8rem;
+			padding-left: 10px;
+			// PC
+			@include mq(tb) {
+				font-size: 3.0rem;
+			}
+			&:hover {
+				@include color-red;
+				cursor: pointer;
+			}
+		}
+		#nav-toggle {
+			@include fixed($right:18px);
+			display: inline-block;
+			width: 34px;
+			height: 36px;
+			// PC
+			/*@include mq(tb) {
+				display: none;
+			}*/
+			span {
+				@include absolute();
+				@include bg-mok;
+				font-size: 1.2rem;
+				display: flex;
+				width: 34px;
+				height: 2px;
+				&:nth-child(1) {
+					top: 0;
+				}
+				&:nth-child(2) {
+					top: 11px;
+				}
+				&:nth-child(3) {
+					top: 23px;
+				}	
+			}
+			p {
+				opacity: 0;
+			}
+		}
+		ul {
+			display: none;
+			// PC
+			/*@include mq(tb) {
+				@include absolute($top:0, $right:0);
+				display: inline-block;
+				list-style: none;
+				padding-right: 10px;
+			}
+			li {
+				// PC
+				@include mq(tb) {
+					display: inline-block;
+					line-height: 30px;
+					font-weight: normal;
+					font-size: 1.7rem;
+					margin: 0 22px;
+					vertical-align: middle;
+				}
+				a {
+					// PC
+					@include mq(tb) {
+						@include color-blk;
+						font-size: 1.7rem;
+						font-weight: 300;
+						display: inline-block;
+					}
+					i.icon-insta {
+						// PC
+						@include mq(tb) {
+							font-size: 2.8rem;
+							vertical-align: bottom;
+						}
+					}
+					i.icon-shop {
+						// PC
+						@include mq(tb) {
+							font-size: 2.2rem;
+						}
+					}
+					&:hover {
+						// PC
+						@include mq(tb) {
+							color: #e50012 !important;
+							cursor: pointer;
+						}
+						i {
+							@include color-red;
+						}
+					}
+
+				}
+			}*/
+		}
+	}
+}
+
+/*.midnightHeader.default {
+	.sns-ttl {
+		color: #fff !important;
+		z-index: 9999;
+	}
+	a {
+		color: #fff !important;
+		z-index: 9999;
+	}
+	&:hover {
+		cursor: pointer;
+		@include color-red;
+	}
+	span {
+		background-color: #fff !important;
+		color: #fff !important;
+	}
+}*/
+
+/* --------------------------------------------------
+    動くアンダーライン
+-------------------------------------------------- */
+.global-nav-text {
+	display: inline-block;
+	position: relative;
+	&::after {
+		@include bg-red;
+		@include absolute($bottom:0, $left:0);
+		content: '';
+		width: 0;
+		height: 1px;
+		transition: all 0.3s ease 0s;
+	}
+	&:hover {
+		cursor: pointer;
+		&::after {
+			width: 100%;
+		}
+	}
+}

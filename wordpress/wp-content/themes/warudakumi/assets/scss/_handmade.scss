@@ -1,0 +1,231 @@
+/* handmade.scss */
+
+
+	.main {
+		.primary,
+		.secondary {
+			@include full-margin;
+			@include relative();
+			padding: 70px 0;
+			// PC
+			@include mq(tb) {
+				padding: 120px 0;
+			}
+			.inner {
+				max-width: 450px;
+				// PC
+				@include mq(tb) {
+					max-width: 1200px;
+				}
+				.ttl-handmade {
+					@include f-box;
+					padding-bottom: 50px;
+					.in-img,
+					.in-text {
+						@include box-sizing;
+						width: 100%;
+						// PC
+						@include mq(tb) {
+							width: 47%;
+						}
+					}
+					.in-img {
+						height: 300px;
+						margin-bottom: 25px;
+						// PC
+						@include mq(tb) {
+							height: 400px;
+							margin-bottom: 0;
+						}
+						.img-use01,
+						.img-use11 {
+							@include img-cover;
+							height: 100%;
+						}
+					}
+					.in-text {
+						text-align: left;
+						h5 {
+							text-align: center;
+							padding-top: 25px;
+							padding-bottom: 25px;
+							margin-bottom: 30px;
+							border-top: 1px solid #4f4f4f;
+							border-bottom: 1px solid #4f4f4f;
+							font-weight: 400;
+						}
+						p {
+							text-align: left;
+							line-height: 180%;
+						}
+					}
+				}
+				.shag-type {
+					@include f-box;
+					.shag-type-box {
+						@include box-sizing;
+						padding-bottom: 70px;
+						width: 100%;
+						// PC
+						@include mq(tb) {
+							padding-bottom: 50px;
+							width: 47%;
+						}
+						.in-img {
+							width: 100%;
+							height: 300px;
+							margin-bottom: 25px;
+							padding: 10px;
+							background-color: #fff;
+							box-sizing: border-box;
+							// PC
+							@include mq(tb) {
+								padding: 15px;
+								height: 420px;
+								margin-bottom: 35px;
+							}
+							.mini-leather,
+							.mini-cloth,
+							.regular-short,
+							.regular-long {
+								@include img-cover;
+								height: 100%;
+							}
+						}
+						.in-text {
+							width: 100%;
+							text-align: left;
+							h5 {
+								@include color-wht;
+								font-weight: 400;
+								margin-bottom: 20px;
+								// PC
+								@include mq(tb) {
+									margin-bottom: 30px;
+								}
+								span {
+									font-weight: 300;
+									font-size: 60%;
+									// PC
+									@include mq(tb) {
+										font-size: 50%;
+									}
+								}
+							}
+							p {
+								@include color-lgry;
+								text-align: left;
+								br {
+									@include br-pc;
+								}
+							}
+						}
+					}
+				}
+				.use-handmade {
+					text-align: center;
+					margin-top: 80px;;
+					margin-bottom: 40px;
+					// PC
+					@include mq(tb) {
+						margin-bottom: 50px;
+					}
+					i {
+						@include color-mok;
+						font-size: 4.5rem;
+						display: block;
+						margin: 0 auto;
+						text-align: center;
+						margin-bottom: 20px;
+					}
+					h5 {
+						display: inline-block;
+						text-align: center;
+						padding-bottom: 15px;
+						margin-bottom: 10px;
+						border-bottom: 1px solid #4f4f4f;
+						font-weight: 400;
+						// PC
+						@include mq(tb) {
+							padding-bottom: 18px;
+							margin-bottom: 10px;
+						}
+					}
+					p {
+						@include color-mok;
+						text-align: center;
+						line-height: 150%;
+					}
+				}
+				.shag-flow {
+					@include f-box;
+					justify-content: flex-start;
+					.shag-flow-box {
+						@include box-sizing;
+						padding-bottom: 70px;
+						width: 100%;
+						margin-right: 0;
+						// PC
+						@include mq(tb) {
+							padding-bottom: 60px;
+							width: 30%;
+							margin-right: 5%;
+							&:nth-of-type(3n) {
+								margin-right: 0;
+							}
+						}
+						.in-img {
+							width: 100%;
+							height: 220px;
+							margin-bottom: 25px;
+							// PC
+							@include mq(tb) {
+								height: 300px;
+							}
+							.img-use01,
+							.img-use02,
+							.img-use03,
+							.img-use04,
+							.img-use05,
+							.img-use06,
+							.img-use07,
+							.img-use08,
+							.img-use09,
+							.img-use10,
+							.img-use11,
+							.img-use12 {
+								@include img-cover;
+								height: 100%;
+							}
+						}
+						.in-text {
+							width: 100%;
+							text-align: left;
+							h5 {
+								@include color-wht;
+								text-align: left;
+								margin-bottom: 10px;
+								line-height: 1.7;
+								font-weight: 400;
+								// PC
+								@include mq(tb) {
+									margin-bottom: 20px;
+								}
+							}
+							p {
+								@include color-lgry;
+								text-align: left;
+								br {
+									@include br-pc;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.primary {
+			@include bg-dgry;
+		}
+	}
+

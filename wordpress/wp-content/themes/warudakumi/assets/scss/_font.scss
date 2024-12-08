@@ -1,0 +1,161 @@
+/* Scss Document */
+
+/* --------------------------------------------------
+    font 基本
+-------------------------------------------------- */
+
+html { font-size: 62.5%; } // 16p*0.625 = 10px(=1rem)
+   
+body { 
+	@include color-wht;
+	font-size: 1.3rem;  // サイズ / 太さ / 字間 / 字幅 / 左寄せ
+	font-weight: 200;
+	letter-spacing: 0.05em;
+	line-height: 1.6;
+	text-align: left;
+}
+
+/* --------------------------------------------------
+    google font
+-------------------------------------------------- */
+
+// [ Noto+Sans+JP ] (100/300/400/500/700/900)
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@mixin noto-sans { font-family: 'Noto Sans JP', sans-serif; }
+
+// [ Noto Serif JP ] (100/300/400/500/700/900)
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;500;600;700&display=swap');
+@mixin noto-serif { font-family: 'Noto Serif JP', serif; }
+
+// [ Prompt ] (100/200/300/500/700)
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;500;700&display=swap');
+@mixin prompt { font-family: 'Prompt', sans-serif; }
+
+// [ Lato ] (100/300/400/700/900)
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@mixin lato { font-family: 'Lato', sans-serif; }
+
+// [ Inria ] (300/400/700)
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&display=swap');
+@mixin cairo { font-family: 'Inria Serif', serif; }
+
+/* --------------------------------------------------
+    フォント
+-------------------------------------------------- */
+.top-jp   { @include noto-serif; }
+.top-en   { @include lato; }
+
+h1        { @include cairo; letter-spacing: 0; }
+h2        { @include cairo; letter-spacing: 0; }
+h3        { @include cairo; letter-spacing: 0; }
+h4        { @include cairo; letter-spacing: 0; }
+
+.p-en     { @include lato; }
+
+.in-yurayura,
+.header-shop-btn-in {
+	p {
+		@include lato;
+	}
+}
+
+#top-works {
+	a {
+		@include lato;
+	}
+}
+
+footer {
+	li {
+		a {
+			@include lato; }
+	}
+	.p-big {
+		@include noto-serif;
+	}
+}
+
+/* --------------------------------------------------
+    font-family
+-------------------------------------------------- */
+body {
+	font-family: 'Noto Sans JP',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+/* --------------------------------------------------
+    サイズ font-size
+-------------------------------------------------- */
+.top-jp   { font-size: 2.0rem; @include mq(tb) { font-size: 4.0rem; }}
+.top-en   { font-size: 1.6rem; @include mq(tb) { font-size: 2.0rem; }}
+
+h1        { font-size: 2.3rem; @include mq(tb) { font-size: 3.0rem; }}
+h2        { font-size: 3.5rem; @include mq(tb) { font-size: 5.0rem; }}
+h3        { font-size: 3.1rem; @include mq(tb) { font-size: 4.2rem; }}
+h4        { font-size: 2.2rem; @include mq(tb) { font-size: 2.7rem; }}
+h5        { font-size: 2.0rem; @include mq(tb) { font-size: 2.6rem; }}
+h6        { font-size: 2.5rem; @include mq(tb) { font-size: 2.2rem; }}
+
+p         { font-size: 1.5rem; @include mq(tb) { font-size: 1.7rem; }}
+.p-en     { font-size: 1.5rem; @include mq(tb) { font-size: 1.7rem; }}
+.p-small  { font-size: 1.1rem; @include mq(tb) { font-size: 1.3rem; }}
+.p-xsmall { font-size: 1.3rem; @include mq(tb) { font-size: 1.4rem; }}
+.p-big    { font-size: 1.6rem; @include mq(tb) { font-size: 1.7rem; }}
+
+/* --------------------------------------------------
+    揃え text-align
+-------------------------------------------------- */
+.top-jp   { text-align: center; @include mq(tb) { text-align: left; }}
+.top-en   { text-align: center; @include mq(tb) { text-align: left; }}
+
+h1        { text-align: center; @include mq(tb) { text-align: center; }}
+h2        { text-align: center; @include mq(tb) { text-align: center; }}
+h3        { text-align: center; @include mq(tb) { text-align: center; }}
+h4        { text-align: left; @include mq(tb) { text-align: left; }}
+h5        { text-align: center; @include mq(tb) { text-align: center; }}
+h6        { text-align: center; @include mq(tb) { text-align: center; }}
+
+p         { text-align: left; @include mq(tb) { text-align: left; }}
+.p-en     { text-align: left; @include mq(tb) { text-align: left; }}
+.p-small  { text-align: left; @include mq(tb) { text-align: left; }}
+.p-xsmall { text-align: left; @include mq(tb) { text-align: left; }}
+.p-big    { text-align: left; @include mq(tb) { text-align: left; }}
+
+/* --------------------------------------------------
+    太さ font-weight
+-------------------------------------------------- */
+.top-jp   { font-weight: 500; }
+.top-en   { font-weight: 300; }
+
+h1        { font-weight: 300; }
+h2        { font-weight: 300; }
+h3        { font-weight: 300; }
+h4        { font-weight: 300; }
+h5        { font-weight: 300; }
+h6        { font-weight: 300; }
+
+p         { font-weight: 300; }
+.p-en     { font-weight: 300; }
+.p-small  { font-weight: 200; }
+.p-xsmall { font-weight: 200; }
+.p-big    { font-weight: 300; }
+
+/* --------------------------------------------------
+    行間 fline-height
+-------------------------------------------------- */
+h2        { line-height: 100%; }
+h3        { line-height: 100%; }
+h4        { line-height: 130%; }
+h5        { line-height: 130%; }
+h6        { line-height: 130%; }
+
+p         { line-height: 200%; }
+.p-en     { line-height: 200%; }
+.p-small  { line-height: 160%; } // shop info
+.p-xsmall { line-height: 170%; } // footer info
+.p-big    { line-height: 150%; }
+
+/* --------------------------------------------------
+    その他
+-------------------------------------------------- */
+.top-jp,
+.top-en { display: block; @include mq(tb) { display: flex; }}

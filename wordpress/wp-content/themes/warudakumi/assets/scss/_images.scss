@@ -1,0 +1,53 @@
+/* images.scss */
+
+/* --------------------------------------------------
+    イラストimg
+-------------------------------------------------- */
+
+// ロゴ
+@mixin img-logo  { background-image: url("../assets/images/icon/logo-red.svg"); }
+@mixin logo-blk  { background-image: url("../assets/images/icon/logo-blk.svg"); }
+@mixin logo-wht  { background-image: url("../assets/images/icon/logo-wht.svg"); }
+
+.img-logo        { background-image: url("../assets/images/icon/logo-red.svg"); }
+.logo-blk        { background-image: url("../assets/images/icon/logo-blk.svg"); }
+.logo-maruin     { background-image: url("../assets/images/icon/logo-maruin.svg"); }
+
+@mixin bg-wa01   { background-image: url("../assets/images/common/bg-wa01.png"); }
+@mixin bg-washi  { background-image: url("../assets/images/common/bg-washi.png"); }
+
+/* --------------------------------------------------
+    top-img
+-------------------------------------------------- */
+//TOPページ
+// .img-top-handmade   { background-image: url(../assets/images/common/main_item01.jpg); }
+// .img-top-silkscreen { background-image: url(../assets/images/silk/silk1512-model-02.jpg); }
+.img-top-artwork    { background-image: url(../assets/images/common/top-artwork.jpg); }
+
+//handmadeページ top
+// .topview-handmade   { background-image: url(../assets/images/common/main_item01.jpg); }
+.mini-leather       { background-image: url(../assets/images/common/main_item01.jpg); }
+.mini-cloth         { background-image: url(../assets/images/common/mini-cloth01.jpg); }
+.regular-short      { background-image: url(../assets/images/common/regular-short.jpg); }
+.regular-long       { background-image: url(../assets/images/common/regular-long.jpg); }
+
+//silkscreenページ top
+// .topview-silkscreen { background-image: url(../assets/images/silk/silk1705-paramout2017-03.jpg); }
+
+//Worksページ top
+// .topview-works { background-image: url(../assets/images/work/graphic/graphic_2015_fullmoonassembly_01.jpg); }
+
+
+.img-use01          { background-image: url(../assets/images/common/img-use01.jpg); }
+.img-use02          { background-image: url(../assets/images/common/img-use02.jpg); }
+.img-use03          { background-image: url(../assets/images/common/img-use03.jpg); }
+.img-use04          { background-image: url(../assets/images/common/img-use04.jpg); }
+.img-use05          { background-image: url(../assets/images/common/img-use05.jpg); }
+.img-use06          { background-image: url(../assets/images/common/img-use06.jpg); }
+.img-use07          { background-image: url(../assets/images/common/img-use07.jpg); }
+.img-use08          { background-image: url(../assets/images/common/img-use08.jpg); }
+.img-use09          { background-image: url(../assets/images/common/img-use09.jpg); }
+.img-use10          { background-image: url(../assets/images/common/img-use10.jpg); }
+.img-use11          { background-image: url(../assets/images/common/img-use11.jpg); }
+.img-use12          { background-image: url(../assets/images/common/img-use12.jpg); }
+

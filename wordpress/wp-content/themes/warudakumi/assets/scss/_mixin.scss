@@ -1,0 +1,394 @@
+/* mixin.scss */
+
+/* --------------------------------------------------
+    breakpoint / レスポンシブ
+-------------------------------------------------- */
+// 変数の定義 - min-width (最低値)
+$breakpoint-up: (
+	'sp': 'screen and (min-width: 300px)',  // sp スマホ       300px〜767pxまで
+	'tb': 'screen and (min-width: 768px)',　// tb タブレット    768px〜1199pxまで
+	'np': 'screen and (min-width: 1200px)',// np ノートPC     1200px〜1499pxまで
+	'dp': 'screen and (min-width: 1500px)',// dp デスクトップ  1500px〜
+) !default;
+
+/* --------------------------------------------------
+    breakpoint / レスポンシブ
+-------------------------------------------------- */
+// @mixinの定義 (デフォルト sp スマホ)
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoint-up, $breakpoint)} {
+		@content;
+	}
+}
+
+/* --------------------------------------------------
+   [共通] color (色)
+-------------------------------------------------- */
+//レッド
+@mixin color-red { color: #e50012; }
+@mixin bg-red { background-color: #e50012; }
+
+//ホワイト
+@mixin color-wht { color: #f9f9f9; }
+@mixin bg-wht { background-color: #f9f9f9; }
+
+//ブラック
+@mixin color-blk { color: #000000; }
+@mixin bg-blk { background-color: #000000; }
+
+//ダークグレー
+@mixin color-dgry { color: #1C1C1C; }
+@mixin bg-dgry { background-color: #1C1C1C; }
+
+//グレー
+@mixin color-gry { color: #4f4f4f; }
+@mixin bg-gry { background-color: #4f4f4f; }
+
+//杢グレー
+@mixin color-mok { color: #939393; }
+@mixin bg-mok { background-color: #939393; }
+
+//ライトグレー
+@mixin color-lgry { color: #dcdcdc; }
+@mixin bg-lgry { background-color: #dcdcdc; }
+
+//ライトライトグレー
+@mixin color-llgry { color: #f5f5f5; }
+@mixin bg-llgry { background-color: #f5f5f5; }
+
+/* --------------------------------------------------
+  box (paddingのお供に)
+-------------------------------------------------- */
+
+//box-sizing
+@mixin box-sizing {
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+  flexbox (均等) 子要素の%でカラム幅調整
+-------------------------------------------------- */
+
+@mixin f-box {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/* --------------------------------------------------
+  reverce 入れ替える
+-------------------------------------------------- */
+@mixin reverce {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+/* --------------------------------------------------
+  画面幅いっぱい
+-------------------------------------------------- */
+@mixin full-margin {
+	margin-right: calc(50% - 50vw);
+	margin-left: calc(50% - 50vw);
+}
+
+@mixin full-none {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/* --------------------------------------------------
+   col (カラム)
+-------------------------------------------------- */
+
+@mixin flex {
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;  
+}
+
+/* sp縦並び / pc横並び */
+// 親 col
+@mixin col {
+	display: block;
+	@include mq(tb) {
+		display: flex;
+  	}
+}
+
+// 子 col-in
+@mixin col-in {
+	width: 100%;
+	@include mq(tb) {
+		display: block;
+  	}
+}
+
+/* sp縦並び / pc横並び */
+// 親 col-table
+@mixin col-table {
+	display: block;
+	@include mq(tb) {
+		display: table;
+  	}
+}
+
+// 子 col-table-in
+@mixin col-table-in {
+	width: 100%;
+	@include mq(tb) {
+		display: table-cell;
+		width: 50%;
+		vertical-align: middle;
+  	}
+}
+
+/* --------------------------------------------------
+   br
+-------------------------------------------------- */
+
+@mixin br-pc { display: none;  @include mq(tb) { display: block; }}
+@mixin br-sp { display: block; @include mq(tb) { display: none; }}
+
+/* --------------------------------------------------
+  img
+-------------------------------------------------- */
+
+//cover
+@mixin img-cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	vertical-align: middle;
+}
+
+//contain
+@mixin img-contain {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	vertical-align: top;
+}
+
+//img-dark (写真を暗く)
+@mixin img-dark {
+	&::before {
+		content: ' ';
+		background-color: rgba(0,0,0,.5);
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+//box-sizing (はみ出ないようにpadding効かす)
+@mixin box-sizing-sp {
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
+	// PC
+	@include mq(tb) {
+		-moz-box-sizing: content-box;
+    	box-sizing: content-box;
+	}
+}
+
+//img-full (親の左右paddingを 無視 して画面いっぱい)
+@mixin img-full {
+	@include relative($left:50%, $right:50%);
+	width: 100vw; 
+	margin-left: -50vw;
+	margin-right: -50vw;
+	img {
+		max-width: 100vw;
+		width: 100vw;
+	} 
+}
+
+//img-nofull (画面フルを戻す)
+@mixin img-nofull {
+	@include relative($left:0, $right:0);
+	width: 100%; 
+	margin-left: auto;
+	margin-right: auto;
+	img {
+		max-width: 100%;
+		width: 100%;
+	} 
+}
+
+/* --------------------------------------------------
+   飾り
+-------------------------------------------------- */
+
+@mixin dot-line {
+	@include color-wht;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.6rem;
+	line-height: 170%;
+	// PC
+	@include mq(tb) {
+		line-height: 270%;
+	}
+}
+
+.dot-line { @include dot-line; }
+
+/* --------------------------------------------------
+   btn (ボタン)
+-------------------------------------------------- */
+
+//動くアンダーライン
+@mixin btn-line {
+	@include  relative();
+	@include color-blk;
+	display: inline-block;
+	text-decoration: none;
+	&::after {
+		@include bg-red;
+		@include absolute($bottom:-4px, $left:0);
+		content: '';
+		width: 100%;
+		height: 1px;
+		transform: scale(0, 1);
+		transform-origin: left top;
+		transition: transform .3s;
+	}
+	&:hover {
+		@include color-red;
+		&::after {
+			transform: scale(1, 1);
+			text-decoration: none;
+		}
+	}
+}
+
+//拡大ボタン (※親に overflow: hidden;)
+@mixin btn-ex {
+	height: 100%;
+	transition-duration: 0.5s;
+	&:hover {
+		transform: scale(1.2);
+		transition-duration: 0.5s;
+	}
+}
+
+/* --------------------------------------------------
+   hover
+-------------------------------------------------- */
+
+@mixin hover-color-red {
+	text-decoration: none;
+	&:hover {
+		@include color-red;
+		text-decoration: none;
+	}
+}
+
+@mixin hover-bg-red {
+	text-decoration: none;
+	&:hover {
+		@include bg-red;
+		text-decoration: none;
+	}
+}
+
+/* --------------------------------------------------
+    relative / absolute / fixed / static
+-------------------------------------------------- */
+
+// @include absolute($top:100px, $left:0); //top/left (指定)
+// @include absolute(0 0 0 0); //top/right/bottom/left (全体)
+
+// relative 親
+@mixin relative($top:null, $right:null, $bottom:null, $left:null) {
+	position: relative;
+	@if $top != null    { top: $top; }
+	@if $right != null  { right: $right; }
+	@if $bottom != null { bottom: $bottom; }
+	@if $left != null   { left: $left; }
+}
+
+// absolute 子
+@mixin absolute($top:null, $right:null, $bottom:null, $left:null) {
+	position: absolute;
+	@if $top != null    { top: $top; }
+	@if $right != null  { right: $right; }
+	@if $bottom != null { bottom: $bottom; }
+	@if $left != null   { left: $left; }
+}
+
+// fixed 固定
+@mixin fixed($top:null, $right:null, $bottom:null, $left:null) {
+	position: fixed;
+	@if $top != null    { top: $top; }
+	@if $right != null  { right: $right; }
+	@if $bottom != null { bottom: $bottom; }
+	@if $left != null   { left: $left; }
+}
+
+// static デフォルト
+@mixin static($top:null, $right:null, $bottom:null, $left:null) {
+	position: static;
+	@if $top != null    { top: $top; }
+	@if $right != null  { right: $right; }
+	@if $bottom != null { bottom: $bottom; }
+	@if $left != null   { left: $left; }
+}
+
+/* --------------------------------------------------
+    transform-center
+-------------------------------------------------- */
+
+@mixin transform-center {
+	transform: translateY(-50%) translateX(-50%);
+	-ms-transform: translateY(-50%) translateX(-50%);
+	-webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+
+/* --------------------------------------------------
+    max-width ( 1000 / 1200 / 1500 )
+-------------------------------------------------- */
+
+@mixin in-1000 {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 15px;
+		// PC
+		@include mq(tb) {
+		padding: 0 25px;
+  	}
+}
+
+@mixin in-1200 {
+	max-width: 1250px;
+	margin: 0 auto;
+	padding: 0 15px;
+		// PC
+		@include mq(tb) {
+		padding: 0 25px;
+  	}
+}
+
+@mixin in-1500 {
+	max-width: 1550px;
+	margin: 0 auto;
+	padding: 0 15px;
+		// PC
+		@include mq(tb) {
+		padding: 0 25px;
+  	}
+}
+
+

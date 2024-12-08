@@ -1,0 +1,475 @@
+/* top.scss */
+
+
+body.top {
+	.main {
+		.top-visual {
+			@include relative();
+			@include bg-wht;
+			@include bg-washi;
+			margin: 0 auto;
+			text-align: center;
+			display: block;
+			width: 100%;
+			padding-bottom: 30px;
+			.top-inner {
+				display: block;
+				text-align: center;
+				margin: 0 auto;
+				padding-top: 95px;
+				padding-bottom: 50px;
+				// PC
+				@include mq(tb) {
+					display: inline-flex;
+					padding-top: 250px;
+					padding-bottom: 100px;
+				}
+				// DT
+				@include mq(dp) {
+					display: inline-flex;
+					padding-top: 330px;
+					padding-bottom: 170px;
+				}
+				.logo {
+					margin: 0 auto;
+					// PC
+					@include mq(tb) {
+						width: 180px;
+					}
+					.img-logo {
+						@include img-contain;
+						height: 130px;
+						// PC
+						@include mq(tb) {
+							height: 180px;
+						}
+					}
+				}
+				.in-text {
+					margin: 0 auto;
+					padding-top: 40px;
+					// PC
+					@include mq(tb) {
+						padding-top: 30px;
+						padding-left: 55px;
+					}
+					span {
+						@include color-blk;
+					}
+				}
+			}
+			.in-btn {
+				text-align: center;
+				padding-bottom: 35px;
+				// PC
+				@include mq(tb) {
+					padding-bottom: 50px;
+				}
+				// DT
+				@include mq(dp) {
+					padding-bottom: 90px;
+				}
+			}
+			#yurayura {
+				@include relative();
+				@include bg-wht;
+				@include bg-washi;
+				margin-right: calc(50% - 50vw);
+				margin-left: calc(50% - 50vw);
+				min-height: 100px;
+				.in-yurayura {
+					display: block;
+					margin: 0 auto;
+					@include absolute($top:0, $left:0, $right:0);
+					p {
+						@include color-blk;
+						text-align: center;
+						display: block;
+					}
+					i {
+						@include color-blk;
+						font-size: 3rem;
+						display: block;
+						margin: 0 auto;
+						text-align: center;
+					}
+				}
+			}
+		}
+		// 背景 dgry
+		.top-handmade,
+		.top-thx {
+			@include full-margin;
+			@include relative();
+			@include bg-dgry;
+		}
+		// 背景 wht和紙
+		.top-works {
+			@include full-margin;
+			@include relative();
+			@include bg-wht;
+			@include bg-washi;
+		}
+		.top-about,
+		.top-contact {
+			.inner {
+				max-width: 580px;
+				h2 {
+					@include color-wht;
+					margin: 10px 0 30px 0;
+					// PC
+					@include mq(tb) {
+						margin: 25px 0 55px 0;
+					}
+				}
+				.logo-maruin {
+					@include img-contain;
+					display: inline-block;
+					height: 140px;
+					margin-bottom: 25px;
+					// PC
+					@include mq(tb) {
+						height: 200px;
+						margin-bottom: 35px;
+					}
+				}
+				>.ttl {
+					@include color-red;
+					text-align: center;
+					margin-bottom: 30px;
+					display: block;
+					p {
+						@include color-red;
+						text-align: center;
+					}
+					a {
+						p {
+							&:hover {
+								@include color-lgry;
+							}
+						}
+					}
+				}
+				>.txt {
+					p {
+						@include color-wht;
+					}
+				}
+			}
+		}
+		.top-handmade,
+		.top-silk {
+			position: relative;
+			margin-right: calc(50% - 50vw);
+			margin-left: calc(50% - 50vw);
+			background-color: #1c1c1c;
+			.inner {
+				.primary {
+					@include relative();
+					@include f-box;
+					margin: 0 auto;
+					padding: 0;
+					.works-img {
+						width: 100%;
+						margin-bottom: 35px;
+						max-height: 480px;
+						overflow: hidden;
+						// PC
+						@include mq(tb) {
+							width: 50%;
+							margin-bottom: 0;
+						}
+						.img-top-handmade,
+						.img-top-silkscreen {
+							@include img-cover;
+							height: 80vw;
+							// PC
+							@include mq(tb) {
+								height: auto;
+							}
+						}
+					}
+					.works-text {
+						width: 100%;
+						// PC
+						@include mq(tb) {
+							width: 40%;
+						}
+						h2 {
+							@include color-wht;
+							text-align: left;
+							margin-bottom: 25px;
+							// PC
+							@include mq(tb) {
+								margin-bottom: 50px;
+							}
+						}
+						p {
+							margin-bottom: 30px;
+							// PC
+							// PC
+							@include mq(tb) {
+								margin-bottom: 50px;
+							}
+							br {
+								@include br-pc;
+							}
+						}
+						.in-btn {
+							text-align: right;
+							a.btnarrow4 {
+
+							}
+						}
+					}
+				}
+			}
+		}
+		.top-works {
+			.inner {
+				.info {
+					margin-bottom: 60px;
+					// PC
+					@include mq(tb) {
+						margin-bottom: 60px;
+					}
+					h2 {
+						@include color-blk;
+						text-align: left;
+						margin-bottom: 30px;
+						// PC
+						@include mq(tb) {
+							margin-bottom: 50px;
+						}
+					}
+					p {
+						@include color-blk;
+						margin-bottom: 50px;
+						// PC
+						@include mq(tb) {
+							margin-bottom: 30px;
+						}
+						br {
+							@include br-pc;
+						}
+					}
+					.in-btn {
+						text-align: right;
+						a.btnarrow4 {
+							@include color-blk;
+							&::before {
+								@include bg-blk;
+							}
+							&::after {
+								@include bg-blk;
+							}
+							&:hover {
+								@include color-red;
+								&::before {
+									@include bg-red;
+								}
+								&::after {
+									@include bg-red;
+								}
+							}
+						}
+					}
+				}
+				.works-list {
+					@include f-box;
+					///////*WP化修正*//////
+					// margin: 0 auto 30px;
+					margin: 0 auto;
+					///////*WP化修正ここまで*//////					
+					.primary {
+						display: inline-block;
+						text-align: center;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+						///////*WP化追記*//////
+						height: 320px;
+						position: relative;
+						background-color: unset;
+						padding: 0;
+						margin: 0 auto;
+						///////*ここまでWP化追記*//////
+						&:last-child {
+							margin-bottom: 0;
+						}
+						// PC
+						@include mq(tb) {
+							width: 49%;
+							height: 340px;
+							max-width: none;
+							margin-bottom: 20px;
+						}
+						a.top-a {
+							@include relative();
+							display: block;
+							width: 100%;
+							height: 230px;
+							// PC
+							@include mq(tb) {
+								overflow: hidden;
+								height: 340px;
+							}
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+							}
+							.mask {
+								@include static($bottom:0, $left:0);
+								width: 100%;
+								opacity: 1;	//マスク表示する
+								background: none;
+								// PC
+								@include mq(tb) {
+									@include absolute($top:0, $left:0);
+									height: 100%;
+									opacity: 0;    //マスク表示しない
+									background-color: rgba(0,0,0,0.9); //マスク半透明
+								}
+								.caption {
+									padding-top: 0;
+									// PC
+									@include mq(tb) {
+										padding-top: 140px;
+									}
+									.p-copy {
+										@include color-blk;
+										font-size: 160%;
+
+										///////*WP化修正*//////
+										//background-color: rgba(0,0,0,0.8); //マスク半透明
+										///////*WP化修正ここまで*//////
+										
+										text-align: center;
+										// PC
+										@include mq(tb) {
+											background-color: none; //マスクなし
+										}
+									}
+								}
+							}
+							&:hover img {
+								opacity: 0.3;
+								// PC
+								@include mq(tb) {
+									opacity: 1;
+								}
+							}
+							&:hover .mask {
+								// PC
+								@include mq(tb) {
+									opacity: 1;    //マスク表示する
+									transition: .4s;
+								}
+								.caption {
+									.p-copy {
+										@include color-wht;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.top-shop,
+		.top-thx {
+			.inner {
+				max-width: 420px;
+				// PC
+				@include mq(tb) {
+					max-width: 1200px;
+				}
+				h2 {
+					margin: 0 auto 35px;
+					// PC
+					@include mq(tb) {
+						margin: 0 auto 60px;
+					}
+				}
+				.list-shop,
+				.list-thx {
+					flex-wrap: wrap; /* 画面幅に合わせてカラム落ちさせる */
+					display: flex;
+					justify-content: space-between;
+					align-items: top;
+					.btn-effect01 {
+						@include bg-dgry;
+						width: 100%;  /* お好みの幅で指定 */
+						padding: 16px;  /* お好みの幅で指定 */
+						margin-bottom: 15px;
+						/* paddingと合わせてbox-sizingも指定 */
+						-moz-box-sizing: border-box;
+						-webkit-box-sizing: border-box;
+						-o-box-sizing: border-box;
+						-ms-box-sizing: border-box;
+						&:hover {
+							.in-item {
+								.p-big {
+									a {
+										@include color-lgry;
+									}
+								}
+								.p-small {
+									@include color-lgry;
+								}
+							}
+						}
+						// PC
+						@include mq(tb) {
+							width: 32%;  /* お好みの幅で指定 */
+						}
+						.in-item {
+							@include relative();
+							display: flex;
+							display: -webkit-flex;
+							-webkit-flex-direction: column;
+							flex-direction: column;
+							.in-img {
+								overflow: hidden;
+								width: 100%;
+								margin: 0 auto;
+								padding: 0;
+								&:hover {
+									opacity: 0.3;
+								}
+								img {
+									max-width: 420px;
+									width: 100%;
+									height: auto;
+									transform: scale(1);
+									transition: .3s ease-in-out;
+								}
+							}
+							.p-big {
+								@include color-wht;
+								margin: 3px 0 6px;
+								// PC
+								@include mq(tb) {
+									margin: 18px 0;
+									font-size: 1.8rem;
+								}
+								a {
+									@include color-wht;
+									font-weight: 400;
+								}
+							}
+							.p-small {
+								@include color-lgry;
+								text-align: right;
+								font-weight: 300;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,107 @@
+/* works.scss */
+
+
+	.main {
+		.works-inner {
+			.works-list {
+				@include f-box;
+				margin: 0 auto 30px;
+				max-width: 500px;
+				justify-content: space-between;
+				// PC
+				@include mq(tb) {
+					max-width: none;
+					justify-content: flex-start;
+				}
+				.primary {
+					background-color: transparent;
+					display: inline-block;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					margin: 0 auto;
+					padding: 0 0 60px;
+					// PC
+					@include mq(tb) {
+						width: 32.5%;
+						max-width: none;
+						margin: 0;
+						padding-bottom: 10px;
+						margin-right: 0.8%;
+					}
+					a {
+						@include relative();
+						display: block;
+						overflow: hidden;
+						margin: 0 auto;
+						// PC
+						@include mq(tb) {
+							height: 320px;
+						}
+						img {
+							object-fit: cover;
+							width: 100%;
+							height: 100%;
+						}
+						.mask {
+							@include static($bottom:0, $left:0);
+							width: 100%;
+							opacity: 1;	//マスク表示する
+							background: none;
+							margin-top: 20px;
+							// PC
+							@include mq(tb) {
+								@include absolute($top:0, $left:0);
+								height: 100%;
+								opacity: 0;    //マスク表示しない
+								background-color: rgba(0,0,0,0.9); //マスク半透明
+								-webkit-transition:	all 0.2s ease;
+								transition: all 0.2s ease;
+								margin-top: 0;
+							}
+							.caption {
+								padding-top: 0;
+								// PC
+								@include mq(tb) {
+									padding-top: 110px;
+								}
+								.p-small {
+									@include color-lgry;
+									text-align: center;
+									margin-bottom: 0;
+									margin-left: 10px;
+									// PC
+									@include mq(tb) {
+										margin-bottom: 5px;
+										margin-left: 0;
+									}
+									span {
+										@include color-lgry;
+										font-weight: 500;
+									}
+								}
+								.p-copy {
+									@include color-wht;
+									text-align: center;
+									padding-bottom: 10px;
+									margin-left: 10px;
+									// PC
+									@include mq(tb) {
+										background-color: none; //マスクなし
+										font-size: 160%;
+										padding-bottom: 0;
+										margin-left: 0;
+									}
+								}
+							}
+						}
+						&:hover .mask {
+							opacity: 1;    //マスク表示する
+						}
+					}
+				}
+			}
+		}
+	}
+

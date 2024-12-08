@@ -1,0 +1,38 @@
+{
+  "name": "wp-gulp",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "gulpfile.js",
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.14",
+    "css-declaration-sorter": "^6.0.2",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.6",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "postcss": "^8.2.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4"
+  ]
+}

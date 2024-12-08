@@ -1,0 +1,149 @@
+/* footer.scss */
+
+footer {
+	@include full-margin;
+	@include relative();
+	@include bg-dgry;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	// PC
+	/*@include mq(tb) {
+		padding-top: 80px;
+	}*/
+	.inner {
+		@include relative();
+		//max-width: 600px;
+		.footer-logo {
+			display: inline-block;
+			width: 100%;
+			text-align: left;
+			margin: 0;
+			padding-bottom: 40px;
+			// PC
+			/*@include mq(tb) {
+				text-align: center;
+				margin: 0 auto;
+				padding-bottom: 80px;
+			}*/
+			a.img-logo {
+				@include img-contain;
+				display: inline-block;
+				margin: 0;
+				width: 70px;
+				height: 70px;
+				// PC
+				/*@include mq(tb) {
+					margin: 0 auto;
+					width: 80px;
+					height: 80px;
+				}*/
+				&:hover {
+					@include logo-wht;
+					transition: 0.3s;
+				}
+			}
+		}
+		.footer-nav {
+			@include f-box;
+			margin: 0 auto 40px;
+			li {
+				list-style: none;
+				width: 100%;
+				margin-bottom: 25px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				// PC
+				/*@include mq(tb) {
+					width: 20%;
+				}*/
+				a {
+					@include color-lgry;
+					text-align: left;
+					font-weight: 400;
+					font-size: 1.6rem;
+					// PC
+					/*@include mq(tb) {
+						width: 20%;
+					}*/
+					&:hover {
+						@include color-red;
+					}
+				}
+			}
+		}
+		.fixed-sns {
+			@include absolute($top:95px, $right:-58px);
+			transform: rotate(90deg); //縦書き
+			display:  block;
+			z-index: 9997;
+			// PC
+			/*@include mq(tb) {
+				display: none;
+			}*/
+			.sns-ttl {
+				@include box-sizing;
+				@include color-lgry;
+				font-weight: 400;
+				font-size: 1.3rem;
+				letter-spacing: 0.035em;
+				display: inline-block;
+				padding-right: 15px;
+			}
+			.line-high {
+				@include bg-lgry;
+				display: inline-block;
+				vertical-align: middle;
+				height: 1px;
+				width: 10px;
+				margin-right: 5px;
+			}
+			.sns-btn {
+				@include box-sizing;
+				vertical-align: middle;
+				border-radius: 50%;
+				width: 45px;
+				height: 45px;
+				display: inline-block;
+				margin-right: 5px;
+				&:hover {
+					@include bg-red;
+				}
+				i {
+					@include color-lgry;
+					@include box-sizing;
+					transform: rotate(-90deg); //縦を戻す
+					margin: 0 auto;
+					display: block;
+					text-align: center;
+				}
+				.fa-facebook-f {
+					font-size: 2.4rem;
+					padding-top: 3px;
+					padding-right: 17px;
+				}
+				.fa-instagram {
+					font-size: 2.8rem;
+					padding-top: 1px;
+					padding-right: 15px;
+				}
+				.fa-shopping-cart {
+					font-size: 2.2rem;
+					padding-top: 4px;
+					padding-right: 27px;
+				}
+			}
+		}
+		.footer-copyright {
+			@include color-gry;
+			font-size: 1.3rem;
+			text-align: right;
+			margin-right: 10px;
+			// PC
+			/*@include mq(tb) {
+				font-size: 1.4rem;
+			}*/
+		}
+	}
+}
+
